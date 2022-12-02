@@ -67,7 +67,7 @@ dove:
 
 
 ## SVM - RBF
-il support vector machine RBF è un algoritmo di apprendimento basato su regressione RBF con kernel, in quanto cerca di trovare una funzione di apprendimento che massimizza la distanza tra le due classi.
+il support vector machine RBF, *Radial Basis Function*, è un algoritmo di apprendimento basato su regressione RBF con kernel, in quanto cerca di trovare una funzione di apprendimento che massimizza la distanza tra le due classi.
 
 ### funzione di apprendimento
 ```math
@@ -81,9 +81,5 @@ dove:
 * ||x - c||^2 è la distanza euclidea tra il vettore delle features e il vettore dei centroidi
 
 + la funzione di apprendimento RBF è definita come la funzione esponenziale della distanza euclidea tra il vettore delle features e il vettore dei centroidi
-+ il parametro gamma è un valore che viene aggiunto alla funzione di apprendimento per poter spostare la funzione di apprendimento rispetto all'origine
 + il vettore dei centroidi è un vettore che contiene i valori dei centroidi delle features del documento che si sta analizzando
 + la distanza euclidea è definita come la radice quadrata della somma delle differenze al quadrato tra i valori delle features e i valori dei centroidi
-
-
-
