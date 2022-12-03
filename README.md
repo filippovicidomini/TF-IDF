@@ -10,7 +10,7 @@ in modo da poter definire o meno se è spam
 per ora nei tre support vector machine implemetati notiamo che quello lineare è particolarmente lento rispetto gli altri
 due.
 
-## tf-idf
+## TF - IDF
 
 il tf-idf è un indice che misura la rilevanza di una parola in un documento rispetto ad un corpus di documenti.
 la formula è la seguente:
@@ -27,7 +27,6 @@ idf = log(1 + N / n)
 ```
 
 dove:
-
 * tf è il term frequency
 * idf è l'inverse document frequency
 * frequency è la frequenza della parola nel documento
@@ -48,9 +47,7 @@ classi.
 
 ## SVM - lineare
 
-il support vector machine lineare è un algoritmo di apprendimento basato su regressione lineare, in quanto cerca di
-trovare una funzione di apprendimento che massimizza la distanza tra le due classi.
-
+il _support vector machine lineare_ corrisponde ad una retta che separa le due classi. Corrisponde alla *traformazione identità* data con la matrice trasposta.
 ### funzione di apprendimento
 
 ```math 
@@ -73,8 +70,8 @@ dove:
 
 ## SVM - polinomiale
 
-il support vector machine polinomiale è un algoritmo di apprendimento basato su regressione polinomiale con kernel, in
-quanto cerca di trovare una funzione di apprendimento che massimizza la distanza tra le due classi.
+il support vector machine polinomiale corrisponde ad una curva che separa le due classi. Corrisponde alla *trasformazione polinomiale*. 
+considera le dimensioni di partenza comenel caso lineare, ma aggiunge anche le potenze delle features fino ad un certo grado.
 
 ### funzione di apprendimento
 
@@ -95,8 +92,10 @@ dove:
 
 ## SVM - RBF
 
-il support vector machine RBF, *Radial Basis Function*, è un algoritmo di apprendimento basato su regressione RBF con
-kernel, in quanto cerca di trovare una funzione di apprendimento che massimizza la distanza tra le due classi.
+il support vector machine RBF, *Radial Basis Function*, ha come caratteristica di lavorare su infinite dimensioni. Corrisponde quindi a una 
+traformazione non lineare particolarmente complicata, tando da renderla impossibile da utilizzare direttamente.
+Ma la funzione di apprendimento è particolarmente facile da calcolare, ed è possibile cambiare il parametro *gamma* per 
+rendere il SVC più o meno complesso.
 
 ### funzione di apprendimento
 
