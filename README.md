@@ -117,3 +117,35 @@ dove:
   analizzando
 + la distanza euclidea è definita come la radice quadrata della somma delle differenze al quadrato tra i valori delle
   features e i valori dei centroidi
+
+## Random Forest Classifier
+
+Il *Random Forest Classifier* è un algoritmo di machine learning che permette di classificare dati in una categoria o
+nell'altra in base ad un insieme di dati di training.
+
+Si definisce algoritmo di apprendimento supervisionato e non parametrico, in quanto per poter funzionare necessita di un
+insieme di dati di training e
+non necessita di conoscere a priori la forma della funzione di apprendimento.
+é inoltre un ensemble, in quanto usa più alberi di decisione per la classificazione.
+
+### Struttura dell'albero
+
+L'albero di decisione è una struttura dati che permette di classificare dati in base ad un insieme di regole. 
+L'albero è composto da nodi e archi. Ogni nodo contiene una regola, mentre ogni arco rappresenta la risposta alla regola.
+
+Il nodo radice è il primo nodo dell'albero, mentre i nodi foglia sono i nodi che non hanno archi uscenti.
+
+### Costruzione dell'ensemble
+
+L'ensemble è composto da più alberi di decisione. Ogni albero è costruito in modo indipendente dagli altri alberi.
+
+ogni albero viene costruito in questo modo:
+
+1. si prendono le features del dataset e si prendono _n_ feature casuali
+2. si prendono le istanze del dataset e si prendono _n_ istanze casuali
+3. si costruisce l'albero di decisione
+
+### Classificazione
+
+Per classificare una nuova istanza, si passa per tutti gli alberi dell'ensemble, e si prende il valore predetto da ogni albero.
+Si prende la moda tra i valori predetti dagli alberi, e questa è la classe predetta.
