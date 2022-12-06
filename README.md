@@ -27,6 +27,7 @@ idf = log(1 + N / n)
 ```
 
 dove:
+
 * tf è il term frequency
 * idf è l'inverse document frequency
 * frequency è la frequenza della parola nel documento
@@ -47,7 +48,9 @@ classi.
 
 ## SVM - lineare
 
-il _support vector machine lineare_ corrisponde ad una retta che separa le due classi. Corrisponde alla *traformazione identità* data con la matrice trasposta.
+il _support vector machine lineare_ corrisponde ad una retta che separa le due classi. Corrisponde alla *traformazione
+identità* data con la matrice trasposta.
+
 ### funzione di apprendimento
 
 ```math 
@@ -70,8 +73,10 @@ dove:
 
 ## SVM - polinomiale
 
-il support vector machine polinomiale corrisponde ad una curva che separa le due classi. Corrisponde alla *trasformazione polinomiale*. 
-considera le dimensioni di partenza comenel caso lineare, ma aggiunge anche le potenze delle features fino ad un certo grado.
+il support vector machine polinomiale corrisponde ad una curva che separa le due classi. Corrisponde alla *
+trasformazione polinomiale*.
+considera le dimensioni di partenza comenel caso lineare, ma aggiunge anche le potenze delle features fino ad un certo
+grado.
 
 ### funzione di apprendimento
 
@@ -92,9 +97,10 @@ dove:
 
 ## SVM - RBF
 
-il support vector machine RBF, *Radial Basis Function*, ha come caratteristica di lavorare su infinite dimensioni. Corrisponde quindi a una 
+il support vector machine RBF, *Radial Basis Function*, ha come caratteristica di lavorare su infinite dimensioni.
+Corrisponde quindi a una
 traformazione non lineare particolarmente complicata, tando da renderla impossibile da utilizzare direttamente.
-Ma la funzione di apprendimento è particolarmente facile da calcolare, ed è possibile cambiare il parametro *gamma* per 
+Ma la funzione di apprendimento è particolarmente facile da calcolare, ed è possibile cambiare il parametro *gamma* per
 rendere il SVC più o meno complesso.
 
 ### funzione di apprendimento
@@ -130,8 +136,9 @@ non necessita di conoscere a priori la forma della funzione di apprendimento.
 
 ### Struttura dell'albero
 
-L'albero di decisione è una struttura dati che permette di classificare dati in base ad un insieme di regole. 
-L'albero è composto da nodi e archi. Ogni nodo contiene una regola, mentre ogni arco rappresenta la risposta alla regola.
+L'albero di decisione è una struttura dati che permette di classificare dati in base ad un insieme di regole.
+L'albero è composto da nodi e archi. Ogni nodo contiene una regola, mentre ogni arco rappresenta la risposta alla
+regola.
 
 Il nodo radice è il primo nodo dell'albero, mentre i nodi foglia sono i nodi che non hanno archi uscenti.
 
@@ -147,5 +154,24 @@ ogni albero viene costruito in questo modo:
 
 ### Classificazione
 
-Per classificare una nuova istanza, si passa per tutti gli alberi dell'ensemble, e si prende il valore predetto da ogni albero.
+Per classificare una nuova istanza, si passa per tutti gli alberi dell'ensemble, e si prende il valore predetto da ogni
+albero.
 Si prende la moda tra i valori predetti dagli alberi, e questa è la classe predetta.
+
+## k - Nearest Neighbors
+
+Il *k - Nearest Neighbors* è un algoritmo di machine learning che permette di classificare dati in una categoria o
+nell'altra in base ad un insieme di dati di training.
+
+Si definisce algoritmo di apprendimento supervisionato e non parametrico, in quanto per poter funzionare necessita di un
+insieme di dati di training e
+non necessita di conoscere a priori la forma della funzione di apprendimento.
+È anche chiamato algoritmo di apprendimento _lazy_ perché non apprende immediatamente dal set di addestramento, 
+ma memorizza il set di dati e al momento della classificazione esegue un'azione sul set di dati.
+
+### Classificazione
+
+Per classificare una nuova istanza, si calcola la distanza euclidea tra la nuova istanza e tutte le istanze del dataset.
+Si prendono le prime _k_ istanze più vicine, e si prende la moda tra le classi di queste istanze, e questa è la classe
+predetta.
+
