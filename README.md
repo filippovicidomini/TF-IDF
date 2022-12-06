@@ -12,27 +12,42 @@ due.
 
 ## TF - IDF
 
-il tf-idf è un indice che misura la rilevanza di una parola in un documento rispetto ad un corpus di documenti.
-la formula è la seguente:
+*term frequency–inverse document frequency* è un indice statistico utilizzato per valutare l'importanza di una parola
+all'interno di un documento rispetto ad un corpus di documenti.
 
-```math
-tfidf = tf * idf
+matematicamente si può definire come:
+
+```math 
+W_ij = tf_ij * log(N/ni)
 ```
 
 dove:
 
-```math
-tf = (1 + log(frequency)) * log(1 + N / n)
-idf = log(1 + N / n)
-```
+* `W_ij` è il peso della parola `i` all'interno del documento `j`
+* `tf_ij` è il numero di volte che la parola `i` compare nel documento `j`
+* `N` è il numero di documenti nel corpus
+* `ni` è il numero di documenti nel corpus che contengono la parola `i`
+* `log` è il logaritmo in base 10
 
-dove:
+il *tf-idf* è definito come il prodotto tra la frequenza di una parola all'interno di un documento e il suo inverse
+document
+frequency.
 
-* tf è il term frequency
-* idf è l'inverse document frequency
-* frequency è la frequenza della parola nel documento
-* N è il numero di documenti del corpus
-* n è il numero di documenti in cui la parola appare
+ad occuparsi di trasformare il dataset in un formato utilizzabile per gli algoritmi di machine learning è il file 
+_translate_data_to_tfidf.py_. Che prende il file _csv_ di partenza _spambase.csv_ e crea
+il file _spam_tfidf.csv_ che contiene il dataset in formato tf-idf.
+
+### TF
+
+la frequenza di una parola all'interno di un documento è definita come il numero di volte che la parola compare all'
+interno
+del documento diviso il numero totale di parole all'interno del documento.
+
+### IDF
+
+l'*inverse document frequency* è definito come il logaritmo del numero totale di documenti diviso il numero di
+documenti  
+che contengono la parola.
 
 ## SVM
 
@@ -166,7 +181,7 @@ nell'altra in base ad un insieme di dati di training.
 Si definisce algoritmo di apprendimento supervisionato e non parametrico, in quanto per poter funzionare necessita di un
 insieme di dati di training e
 non necessita di conoscere a priori la forma della funzione di apprendimento.
-È anche chiamato algoritmo di apprendimento _lazy_ perché non apprende immediatamente dal set di addestramento, 
+È anche chiamato algoritmo di apprendimento _lazy_ perché non apprende immediatamente dal set di addestramento,
 ma memorizza il set di dati e al momento della classificazione esegue un'azione sul set di dati.
 
 ### Classificazione
