@@ -1,14 +1,6 @@
 # TF-IDF
 
-secondo assignment di informatica 2 modulo 1.
-
-## machine learning
-
-lo scopo dell'assignment è creare uno strumento in grado di riconoscere la natura di una mail, o in gneerale di un file
-di testo,
-in modo da poter definire o meno se è spam
-per ora nei tre support vector machine implemetati notiamo che quello lineare è particolarmente lento rispetto gli altri
-due.
+This is a simple implementation of TF-IDF in Python.
 
 ## TF - IDF
 
@@ -26,7 +18,6 @@ del documento diviso il numero totale di parole all'interno del documento.
 l'*inverse document frequency* è definito come il logaritmo del numero totale di documenti diviso il numero di
 documenti  
 che contengono la parola.
-
 
 Matematicamente si può definire come:
 
@@ -150,6 +141,36 @@ dove:
   analizzando
 + la distanza euclidea è definita come la radice quadrata della somma delle differenze al quadrato tra i valori delle
   features e i valori dei centroidi
+
+## SVM - angolar kernel
+
+il support vector machine con kernel *Angular Kernel*, ha come caratteristica di lavorare su infinite dimensioni.
+Corrisponde quindi a una
+traformazione non lineare particolarmente complicata, tando da renderla impossibile da utilizzare direttamente.
+Ma la funzione di apprendimento è particolarmente facile da calcolare. 
+
+
+### funzione di apprendimento
+
+```math
+f(x) = arcCos((x * c) / (||x|| * ||c||))
+
+```
+
+dove:
+
+* x è il vettore delle features
+* c è il vettore dei centroidi
+* f(x) è il valore predetto
+* ||x|| è la norma del vettore delle features
+* ||c|| è la norma del vettore dei centroidi
+* (x * c) è il prodotto scalare tra il vettore delle features e il vettore dei centroidi
+* arcCos è l'arco della funzione coseno
+
+Il kernel è definito positivo se il prodotto scalare tra il vettore delle features e il vettore dei centroidi è maggiore
+  di zero. Altrimenti è definito negativo. Il valore predetto è quindi l'arco della funzione coseno del prodotto scalare
+    tra il vettore delle features e il vettore dei centroidi, diviso per la norma del vettore delle features e la norma
+    del vettore dei centroidi. Il valore predetto è compreso tra 0 e 1. 
 
 ## Random Forest Classifier
 
