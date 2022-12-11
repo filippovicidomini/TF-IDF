@@ -52,6 +52,20 @@ ad occuparsi di trasformare il dataset in un formato utilizzabile per gli algori
 _convert_data_to_tfidf.py_. Che prende il file _csv_ di partenza _spambase.csv_ e crea
 il file _spam_tfidf.csv_ che contiene il dataset in formato tf-idf.
 
+# classificatori determinativi e generativi
+
+## classificatori determinativi
+
+i classificatori determinativi sono quelli che non hanno un modello di apprendimento, ma semplicemente
+calcolano la probabilità di appartenenza di un dato punto ad una classe, basandosi sulle probabilità di appartenenza
+di
+ogni punto del dataset.
+
+## classificatori generativi
+
+i classificatori generativi sono quelli che hanno un modello di appartenenza, che viene utilizzato per calcolare la
+probabilità di appartenenza di un dato punto ad una classe.
+
 ## SVM
 
 Il *support vector machine* è un algoritmo di machine learning che permette di classificare dati in una categoria o
@@ -147,8 +161,7 @@ dove:
 il support vector machine con kernel *Angular Kernel*, ha come caratteristica di lavorare su infinite dimensioni.
 Corrisponde quindi a una
 traformazione non lineare particolarmente complicata, tando da renderla impossibile da utilizzare direttamente.
-Ma la funzione di apprendimento è particolarmente facile da calcolare. 
-
+Ma la funzione di apprendimento è particolarmente facile da calcolare.
 
 ### funzione di apprendimento
 
@@ -168,9 +181,9 @@ dove:
 * arcCos è l'arco della funzione coseno
 
 Il kernel è definito positivo se il prodotto scalare tra il vettore delle features e il vettore dei centroidi è maggiore
-  di zero. Altrimenti è definito negativo. Il valore predetto è quindi l'arco della funzione coseno del prodotto scalare
-    tra il vettore delle features e il vettore dei centroidi, diviso per la norma del vettore delle features e la norma
-    del vettore dei centroidi. Il valore predetto è compreso tra 0 e 1. 
+di zero. Altrimenti è definito negativo. Il valore predetto è quindi l'arco della funzione coseno del prodotto scalare
+tra il vettore delle features e il vettore dei centroidi, diviso per la norma del vettore delle features e la norma
+del vettore dei centroidi. Il valore predetto è compreso tra 0 e 1.
 
 ## Random Forest Classifier
 
@@ -223,3 +236,37 @@ Per classificare una nuova istanza, si calcola la distanza euclidea tra la nuova
 Si prendono le prime _k_ istanze più vicine, e si prende la moda tra le classi di queste istanze, e questa è la classe
 predetta.
 
+# Naive Bayes
+
+il naive bayes è un classificatore generativo, che utilizza il teorema di bayes per calcolare la probabilità di
+appartenenza di un punto ad una classe.
+
+## Teorema di bayes
+
+Il teorema di bayes è una formula che permette di calcolare la probabilità di appartenenza di un punto ad una classe
+basandosi sulle probabilità di appartenenza di ogni punto del dataset.
+
+## Naive Bayes Gaussiano
+
+Il naive bayes gaussiano è un classificatore generativo, che utilizza il teorema di bayes per calcolare la probabilità
+di appartenenza di un punto ad una classe.
+per calcolare la probabilità di appartenenza di un punto ad una classe, si calcola la probabilità di appartenenza di
+ogni feature della classe, e si moltiplicano tra loro.
+
+La probabilità di appartenenza di una feature della classe viene calcolata come segue:
+
+```python 
+p(x | y) = 1 / sqrt(2 * pi * sigma ^ 2) * exp(-1 / 2 * ((x - mu) / sigma) ^ 2)
+```
+
+dove:
+
+* x è il valore della feature
+* y è la classe
+* mu è la media della feature
+* sigma è la deviazione standard della feature
+
+### Classificazione
+
+Per classificare una nuova istanza, si calcola la probabilità di appartenenza ad ogni classe, e si prende la classe con
+la probabilità più alta.
