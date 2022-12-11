@@ -20,10 +20,10 @@ df = pd.read_csv('spambase.csv', names=indexes)
 # we are not interested in the columns 55-57 so we delete those and store the spam/ham informations in a list
 del df[55], df[56], df[57]
 spam_ham = df[58].tolist()
-
+print(df.head())
 # restore the DF in order to use it for the calculation of weights
 df_touse = pd.read_csv('spambase.csv', names=indexes)
-del df_touse[55], df_touse[56], df_touse[57], df_touse[58]
+del df_touse[55], df_touse[56], df_touse[57]
 
 lista = df_touse.values.tolist()
 
@@ -54,7 +54,9 @@ def dataweight(lista):
 
 
 weight_list = dataweight(lista)
-indexes_2 = range(1, 55)
+indexes_2 = range(1, 56)
 weight_df = pd.DataFrame(weight_list, columns=indexes_2)
+del weight_df[55]
+weight_df['targhet'] = spam_ham
 print(weight_df.head())
 weight_df.to_csv('spam_tfidf.csv', index=indexes_2)

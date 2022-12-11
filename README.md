@@ -15,7 +15,20 @@ due.
 *term frequency–inverse document frequency* è un indice statistico utilizzato per valutare l'importanza di una parola
 all'interno di un documento rispetto ad un corpus di documenti.
 
-matematicamente si può definire come:
+### TF
+
+la frequenza di una parola all'interno di un documento è definita come il numero di volte che la parola compare all'
+interno
+del documento diviso il numero totale di parole all'interno del documento.
+
+### IDF
+
+l'*inverse document frequency* è definito come il logaritmo del numero totale di documenti diviso il numero di
+documenti  
+che contengono la parola.
+
+
+Matematicamente si può definire come:
 
 ```math 
 W_ij = tf_ij * log(N/ni)
@@ -29,13 +42,14 @@ dove:
 * `ni` è il numero di documenti nel corpus che contengono la parola `i`
 * `log` è il logaritmo in base e
 
-la base del logaritmo è _e_ perchè più bassa è la base, più alto il risultato, il che può influire sul 
+la base del logaritmo è _e_ perchè più bassa è la base, più alto il risultato, il che può influire sul
 troncamento dei risultati di ricerca impostati per punteggio.
 dal punto di vista matematico, la base del logaritmo non ha importanza in quanto può essere cambiata con la formula:
 
 ```math
 log_b(x) = log_e(x) / log_e(b)
 ```
+
 ma dal punto di vista pratico,
 la base _e_ è più adatta per il calcolo di tf-idf.
 
@@ -43,21 +57,9 @@ il *tf-idf* è definito come il prodotto tra la frequenza di una parola all'inte
 document
 frequency.
 
-ad occuparsi di trasformare il dataset in un formato utilizzabile per gli algoritmi di machine learning è il file 
+ad occuparsi di trasformare il dataset in un formato utilizzabile per gli algoritmi di machine learning è il file
 _convert_data_to_tfidf.py_. Che prende il file _csv_ di partenza _spambase.csv_ e crea
 il file _spam_tfidf.csv_ che contiene il dataset in formato tf-idf.
-
-### TF
-
-la frequenza di una parola all'interno di un documento è definita come il numero di volte che la parola compare all'
-interno
-del documento diviso il numero totale di parole all'interno del documento.
-
-### IDF
-
-l'*inverse document frequency* è definito come il logaritmo del numero totale di documenti diviso il numero di
-documenti  
-che contengono la parola.
 
 ## SVM
 
