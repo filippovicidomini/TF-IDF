@@ -22,7 +22,7 @@ riassunto automatico di testi e per il clustering di documenti simili.
 Matematicamente si può definire come:
 
 ```math 
-W_ij = tf_ij * log(N/ni)
+W_i_j = tf_ij * log(N/ni)
 ```
 
 dove:
