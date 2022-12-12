@@ -320,3 +320,11 @@ La SVM polinomiale presenta alcuni vantaggi rispetto ad altri modelli di classif
 dati con alta dimensionalità e la possibilità di scegliere tra diverse funzioni di kernel per adattarsi meglio ai dati.
 Tuttavia, la SVM polinomiale può anche presentare alcuni svantaggi, come il tempo di elaborazione più elevato rispetto
 ad altri modelli e la necessità di una quantità adeguata di dati per ottenere risultati accurati.
+
+##svm rbf
+È un potente algoritmo che può funzionare bene su una vasta gamma di problemi, ma non è sempre la scelta migliore per
+ogni situazione. Alcuni dei vantaggi dell'utilizzo di RBF SVM includono la sua capacità di gestire dati non lineari e la
+sua capacità di funzionare bene su dati ad alta dimensione. Tuttavia, può essere computazionalmente costoso e può
+richiedere un'attenta messa a punto dei parametri per ottenere buone prestazioni. In conclusione, RBF SVM è uno
+strumento utile per l'apprendimento automatico, ma è importante considerare attentamente i suoi punti di forza e i suoi
+limiti quando si decide se utilizzarlo per un particolare problema.
