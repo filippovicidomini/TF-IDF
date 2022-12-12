@@ -294,3 +294,29 @@ dove:
 
 Per classificare una nuova istanza, si calcola la probabilità di appartenenza ad ogni classe, e si prende la classe con
 la probabilità più alta.
+
+# conclusioni
+
+## svm lineare
+
+Sono stati effettuati 5 test con 5 valori differendi del parametro _C_, ovvero il parametro di regolarizzazione.
+all'aumentare di _C_ si nota un aumento del tempo di esecuzione, ma non un corrispondente miglioramento della
+precisione. Questa indatti rimane costante in un intorno di 0.926, piuttosto alta.
+
+il support vector machine lineare può essere meno efficace in caso di dati molto complessi o non lineari, in cui
+potrebbe essere necessario utilizzare tecniche di classificazione più sofisticate.
+
+## svm polinomiale
+
+Dopo aver eseguito un'analisi accurata sui dati utilizzando una SVM polinomiale, si può arrivare alle seguenti
+conclusioni:
+La SVM polinomiale è un modello di classificazione che si dimostra efficace nel riconoscimento di pattern complessi e
+non lineari nei dati.
+La scelta del grado del polinomio può influire significativamente sulla performance del modello, pertanto è importante
+selezionare il grado ottimale attraverso metodi di validazione accurati.
+La SVM polinomiale può essere utilizzata in diverse applicazioni, come ad esempio il riconoscimento di immagini, la
+classificazione di documenti o la predizione di serie storiche.
+La SVM polinomiale presenta alcuni vantaggi rispetto ad altri modelli di classificazione, come la capacità di gestire
+dati con alta dimensionalità e la possibilità di scegliere tra diverse funzioni di kernel per adattarsi meglio ai dati.
+Tuttavia, la SVM polinomiale può anche presentare alcuni svantaggi, come il tempo di elaborazione più elevato rispetto
+ad altri modelli e la necessità di una quantità adeguata di dati per ottenere risultati accurati.
