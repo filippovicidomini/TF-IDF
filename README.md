@@ -343,4 +343,11 @@ un tempo di training pari a 2.4 secondi.
 Possiamo conlcudere che questo sia un ottimo classificatore. 
 
 ## naive bayes gaussian
+le per
+
+## K nearest neighbors
+Le performance del K nearest neighbors sono molto buone, con un'accuratezza media di 0.92. il tempo di esecuzione
+è basso, nel caso peggiore siamo a 0.004 secondi di tempo di training. 
+L'accuratezza massima la troviamo quando settiamo il numero di vicini da 1 a 10 vivini, e quest'ultima risulta essere pari a 0.924.
+Possiamo conlcudere che questo sia un ottimo classificatore.
 
