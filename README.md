@@ -321,10 +321,26 @@ dati con alta dimensionalità e la possibilità di scegliere tra diverse funzion
 Tuttavia, la SVM polinomiale può anche presentare alcuni svantaggi, come il tempo di elaborazione più elevato rispetto
 ad altri modelli e la necessità di una quantità adeguata di dati per ottenere risultati accurati.
 
-##svm rbf
+## svm rbf
 È un potente algoritmo che può funzionare bene su una vasta gamma di problemi, ma non è sempre la scelta migliore per
 ogni situazione. Alcuni dei vantaggi dell'utilizzo di RBF SVM includono la sua capacità di gestire dati non lineari e la
 sua capacità di funzionare bene su dati ad alta dimensione. Tuttavia, può essere computazionalmente costoso e può
 richiedere un'attenta messa a punto dei parametri per ottenere buone prestazioni. In conclusione, RBF SVM è uno
 strumento utile per l'apprendimento automatico, ma è importante considerare attentamente i suoi punti di forza e i suoi
 limiti quando si decide se utilizzarlo per un particolare problema.
+
+## SVM con kernel angolare
+i dati di accuratezza ottenuti utilizzando SVM con kernel angolare non sono partocolariamente buoni, ma non sono nemmeno
+troppo cattivi. la media dell'accuratezza è in un intorno di 0.700, che è un valore non troppo alto, ma non troppo basso.
+il tempo di esecuzioni non è particolarmente alto, siamo semptre in un intorno del secondo. questo modello è quindi
+adatto a problemi di classificazione non troppo complessi, ma non adatti a problemi di classificazione molto complessi.
+
+## random forest classifier
+le performance del random forest classifier sono molto buone, con un'accuratezza media di 0.95. il tempo di esecuzione  
+è relativamente basso, nel caso peggiore siamo a tre secondi di tempo di training. 
+L'accuratezza massima la troviamo quando settiamo il numero di stimatori a 250, e questu'ultima risulta essere pari a 0.946, 
+un tempo di training pari a 2.4 secondi. 
+Possiamo conlcudere che questo sia un ottimo classificatore. 
+
+## naive bayes gaussian
+
