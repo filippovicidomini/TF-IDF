@@ -296,6 +296,9 @@ Per classificare una nuova istanza, si calcola la probabilità di appartenenza a
 la probabilità più alta.
 
 # conclusioni
+cross_val_score è un metodo di sklearn che permette di valutare il modello utilizzando la cross validation. Questo
+metodo prende in input il modello, il dataset, il numero di fold e la metrica da utilizzare per valutare il modello.
+Questo metodo restituisce un array con i risultati di ogni fold. 
 
 ## svm lineare
 
@@ -343,7 +346,11 @@ un tempo di training pari a 2.4 secondi.
 Possiamo conlcudere che questo sia un ottimo classificatore. 
 
 ## naive bayes gaussian
-le per
+L'accuratezza media del naive bayes gaussian è di 0.807, un valore non troppo alto, ma non troppo basso. Il tempo di
+esecuzione è molto basso, nel caso peggiore siamo a 0.02 secondi di tempo di training. Possiamo quindi dire che questo 
+sia un buon classificatore.
+
+
 
 ## K nearest neighbors
 Le performance del K nearest neighbors sono molto buone, con un'accuratezza media di 0.92. il tempo di esecuzione
