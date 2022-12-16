@@ -61,7 +61,7 @@ class NaiveBayesGaussian(BaseEstimator, ClassifierMixin):
 
     def norm_single(self, param, mean, sigma):
         if sigma == 0:
-            return 0
+            return 1
         return 1 / np.sqrt(2 * np.pi * sigma**2) * np.exp(-0.5 * (param - mean) ** 2 / sigma ** 2)
 
 
