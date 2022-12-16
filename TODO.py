@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sn
+from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.model_selection import train_test_split
-from sklearn.base import BaseEstimator, ClassifierMixin
 
 dataset = pd.read_csv('spam_tfidf.csv', index_col=[0])
 # dataset.head()
@@ -17,6 +17,12 @@ dataset[str(1)]
 X = dataset.drop('targhet', axis=1)
 y = dataset['targhet']  # colonna che segna se è spam o meno
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+
+
+def norm_single(param, mean, sigma):
+    if np.isclose(sigma, 0):
+        return 1
+    return 1 / np.sqrt(2 * np.pi * sigma ** 2) * np.exp(-0.5 * (param - mean) ** 2 / (sigma ** 2))
 
 
 class NaiveBayesGaussian(BaseEstimator, ClassifierMixin):
@@ -31,6 +37,8 @@ class NaiveBayesGaussian(BaseEstimator, ClassifierMixin):
             self.freq.append((y == c).sum() / y.shape[0])
             self.mean.append(X[y == c].mean(axis=0))
             self.var.append(X[y == c].var(axis=0))
+        for i in range(len(self.var)):
+            self.var[i] += np.min(self.var) * 0.1
 
     def predict(self, X):
 
@@ -56,19 +64,18 @@ class NaiveBayesGaussian(BaseEstimator, ClassifierMixin):
         new_doc = np.array(new_doc)
         prob = 1
         for i in range(len(new_doc)):
-            prob *= self.norm_single(new_doc[i], self.mean[target][i], self.var[target][i])
+            prob *= norm_single(new_doc[i], self.mean[target][i], self.var[target][i])
         return prob
 
-    def norm_single(self, param, mean, sigma):
-        if sigma == 0:
-            return 1
-        return 1 / np.sqrt(2 * np.pi * sigma**2) * np.exp(-0.5 * (param - mean) ** 2 / sigma ** 2)
 
+nbg = NaiveBayesGaussian()
+nbg.fit(X_train, y_train)
 
 from sklearn.model_selection import cross_val_score
+
 fig = plt.figure()
 list_of_predictions = []
-#for i in range(1):
+# for i in range(1):
 nbg = NaiveBayesGaussian()
 start_time = time.time()
 nbg.fit(X_train, y_train)
@@ -90,4 +97,3 @@ plt.ylabel('Truth')
 plt.tight_layout()
 
 plt.savefig('confusion matric gaussianNB.png')
-
