@@ -296,9 +296,10 @@ Per classificare una nuova istanza, si calcola la probabilità di appartenenza a
 la probabilità più alta.
 
 # conclusioni
+
 cross_val_score è un metodo di sklearn che permette di valutare il modello utilizzando la cross validation. Questo
 metodo prende in input il modello, il dataset, il numero di fold e la metrica da utilizzare per valutare il modello.
-Questo metodo restituisce un array con i risultati di ogni fold. 
+Questo metodo restituisce un array con i risultati di ogni fold.
 
 ## svm lineare
 
@@ -325,6 +326,7 @@ Tuttavia, la SVM polinomiale può anche presentare alcuni svantaggi, come il tem
 ad altri modelli e la necessità di una quantità adeguata di dati per ottenere risultati accurati.
 
 ## svm rbf
+
 È un potente algoritmo che può funzionare bene su una vasta gamma di problemi, ma non è sempre la scelta migliore per
 ogni situazione. Alcuni dei vantaggi dell'utilizzo di RBF SVM includono la sua capacità di gestire dati non lineari e la
 sua capacità di funzionare bene su dati ad alta dimensione. Tuttavia, può essere computazionalmente costoso e può
@@ -333,28 +335,33 @@ strumento utile per l'apprendimento automatico, ma è importante considerare att
 limiti quando si decide se utilizzarlo per un particolare problema.
 
 ## SVM con kernel angolare
+
 i dati di accuratezza ottenuti utilizzando SVM con kernel angolare non sono partocolariamente buoni, ma non sono nemmeno
-troppo cattivi. la media dell'accuratezza è in un intorno di 0.700, che è un valore non troppo alto, ma non troppo basso.
+troppo cattivi. la media dell'accuratezza è in un intorno di 0.700, che è un valore non troppo alto, ma non troppo
+basso.
 il tempo di esecuzioni non è particolarmente alto, siamo semptre in un intorno del secondo. questo modello è quindi
 adatto a problemi di classificazione non troppo complessi, ma non adatti a problemi di classificazione molto complessi.
 
 ## random forest classifier
+
 le performance del random forest classifier sono molto buone, con un'accuratezza media di 0.95. il tempo di esecuzione  
-è relativamente basso, nel caso peggiore siamo a tre secondi di tempo di training. 
-L'accuratezza massima la troviamo quando settiamo il numero di stimatori a 250, e questu'ultima risulta essere pari a 0.946, 
-un tempo di training pari a 2.4 secondi. 
-Possiamo conlcudere che questo sia un ottimo classificatore. 
+è relativamente basso, nel caso peggiore siamo a tre secondi di tempo di training.
+L'accuratezza massima la troviamo quando settiamo il numero di stimatori a 250, e questu'ultima risulta essere pari a
+0.946,
+un tempo di training pari a 2.4 secondi.
+Possiamo conlcudere che questo sia un ottimo classificatore.
 
 ## naive bayes gaussian
+
 L'accuratezza media del naive bayes gaussian è di 0.807, un valore non troppo alto, ma non troppo basso. Il tempo di
-esecuzione è molto basso, nel caso peggiore siamo a 0.02 secondi di tempo di training. Possiamo quindi dire che questo 
+esecuzione è molto basso, nel caso peggiore siamo a 0.02 secondi di tempo di training. Possiamo quindi dire che questo
 sia un buon classificatore.
 
-
-
 ## K nearest neighbors
+
 Le performance del K nearest neighbors sono molto buone, con un'accuratezza media di 0.92. il tempo di esecuzione
-è basso, nel caso peggiore siamo a 0.004 secondi di tempo di training. 
-L'accuratezza massima la troviamo quando settiamo il numero di vicini da 1 a 10 vivini, e quest'ultima risulta essere pari a 0.924.
+è basso, nel caso peggiore siamo a 0.004 secondi di tempo di training.
+L'accuratezza massima la troviamo quando settiamo il numero di vicini da 1 a 10 vivini, e quest'ultima risulta essere
+pari a 0.924.
 Possiamo conlcudere che questo sia un ottimo classificatore.
 
