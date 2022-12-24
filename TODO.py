@@ -20,6 +20,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
 
 
 def norm_single(param, mean, sigma):
+    if sigma == 0:
+        return np.inf
     return 1 / np.sqrt(2 * np.pi * sigma ** 2) * np.exp(-0.5 * (param - mean) ** 2 / (sigma ** 2))
 
 
